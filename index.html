@@ -47,7 +47,7 @@ cursor: pointer;
   padding: 5px;
   margin-left: -30px;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: 0.3s ease-in-out;
 }
 
  button:hover .tooltiptext {
@@ -66,7 +66,7 @@ cursor: pointer;
     <button onclick="kopieraText()">Kopiera text</button>
     <p id="clipboard"></p>
 
-<p>Opperationer</p>   
+<p>Operationer</p>   
 <div class="tooltip"> 
 <button onclick="specialTecken('×')">×<span class="tooltiptext">Multiplikationstecken</span></button> 
 <button onclick="specialTecken('÷')">÷<span class="tooltiptext">Divitionstecken</span></button>
@@ -77,7 +77,7 @@ cursor: pointer;
 <button onclick="specialTecken('∫')">∫<span class="tooltiptext">Integraltecken</span></button>
 </div>
 
-<br> <p>Jämföresesymboler</p>
+<br> <p>Jämförelsesymboler</p>
 <div class="tooltip"> 
 <button onclick="specialTecken('≥')">≥<span class="tooltiptext">Större än eller lika med</span></button>
 <button onclick="specialTecken('≤')">≤<span class="tooltiptext">Mindre än eller lika med</span></button>
@@ -135,14 +135,14 @@ function specialTecken(tecken){
     var input = document.getElementById("textfält");
     input.value += tecken;
     navigator.clipboard.writeText(tecken).then(function() {
-        document.getElementById("clipboard").innerText = tecken + " finns nu i clipboard";
+        document.getElementById("clipboard").innerText = tecken + " finns nu i urklipp";
     });
 }
 
 function kopieraText(){
     var input = document.getElementById("textfält");
     navigator.clipboard.writeText(input.value).then(function() {
-        document.getElementById("clipboard").innerText =  input.value + " finns nu i clipboard";
+        document.getElementById("clipboard").innerText =  input.value + " finns nu i urklipp";
     });
 }
 </script>
